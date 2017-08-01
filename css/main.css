@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+/****************************
+    header
+****************************/
+header {
+  background-color: #6B0504;
+  color: white;
+}
+
+.parameters {
+  padding: 1em;
+  margin-bottom: 2.5%;
+}
+
+/*********************************************
+    APP
+**********************************************/
+
+.schedule {
+  text-align: center;
+}
+
+.day {
+  display: inline-block;
+  border: 3px solid #363635;
+  border-radius: 5px;
+  padding: 0.5em;
+  position: relative;
+}
+
+.day-header {
+  padding-bottom: 1em;
+}
+
+.add-exercise {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 35px;
+}
+
+.add-exercise:hover {
+  border: 2px solid #B0FE76;
+  border-radius: 50%;
+}
+
+
+.day-name {
+  text-align: center;
+}
+
+.exercise {
+  text-align: left;
+  padding: 1em;
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-size: 0.8em;
+  background-color: #B0FE76;
+  box-shadow: 1px 1px 2px 2px #595A4A;
+}
+
+.save-btn {
+  float: right;
+}
+
+.exercise-type {
+  margin-bottom: 10px;
+}
+.exercise-name {
+  width: 125px;
+  display: block;
+}
+
+.sets-title-container {
+  padding: 1em 0;
+}
+.sets-title {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.add-new-set {
+  float: right;
+}
+
+.set-list {
+  padding-left: 20px;
+  margin-top: 0;
+  clear: both;
+}
+.set-list li {
+  margin-top:5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+}
+
+.rep-number {
+  width: 30px
+}
+
+.weight-number {
+  width: 40px;
+}
+
+.cardio-info{
+  display: none;
+  /*background-color: #D1603D;*/
+}
+.cardio-info h3 {
+  display: inline-block;
+}
+.time-number {
+  width: 35px;
+  margin-left: 10px;
+  margin-right: 5px;
+}

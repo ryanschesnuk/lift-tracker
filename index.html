@@ -11,7 +11,264 @@
   </head>
   <body ng-app="liftTrackerApp">
     <header>
+      <h1>Lift Tracker</h1>
+
     </header>
+    <div class="parameters">
+      <label>Units:</label>
+      <select>
+        <option value="metric">Metric (kg)</option>
+        <option value="imperial">Imperial (lbs)</option>
+      </select>
+      <a href="#">Save All</a>
+    </div>
+      <div class="schedule">
+        <div class="day">
+          <div class="day-header">
+            <a href="#"><img src="img/plus-circle.png" class="add-exercise"></a>
+          <h2 class="day-name">Monday</h2>
+          <p class="day-date">July 31, 2017</p>
+          <select>
+            <option value="chest">Chest</option>
+            <option value="back">Back</option>
+            <option value="shoulders">Shoulders</option>
+            <option value="legs">Legs</option>
+            <option value="arms">Arms</option>
+            <option value="push">Push</option>
+            <option value="pull">Pull</option>
+            <option value="upper">Upper</option>
+            <option value="lower">Lower</option>
+            <option value="full">Full</option>
+            <option value="rest">Rest</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+          <div class="exercise">
+            <select class="exercise-type">
+              <option value="weights">Weights</option>
+              <option value="cardio">Cardio</option>
+            </select>
+            <a href="" class="save-btn">Save</a>
+            <div class="name-container">
+            <label ng-click="editing = true;" ng-hide="editing" class="">{{ exercise.name }}</label>
+            <input ng-model="exercise.name" ng-blur="editing = false;" type="text" class="exercise-name" placeholder="Exercise Name">
+          </div>
+          <div class="sets-title-container">
+            <h3 class="sets-title">Sets:</h3>
+            <a class="add-new-set" href="#">+ Add new set</a>
+          </div>
+            <ol class="set-list">
+              <li>
+                <label>{{ set.rep }}</label>
+                <input ng-model="set.rep" type="text" class="rep-number"><span> reps @</span>
+                <label>{{ set.weight }}</label>
+                <input ng-model="set.weight" type="text" class="weight-number"><span class="units"> lbs</span>
+              </li>
+              <li>
+                <input type="text" class="rep-number"><span> reps @</span>
+                <input type="text" class="weight-number"><span class="units"> lbs</span>
+              </li>
+              <li>
+                <input type="text" class="rep-number"><span> reps @</span>
+                <input type="text" class="weight-number"><span class="units"> lbs</span>
+              </li>
+            </ol>
+            <div class="cardio-info">
+              <label><h3>Time:</h3></label><input class="time-number" type="text"><span>minutes</span>
+            </div>
+            <div class="buttons">
+            <a href="#" class="delete-button">Delete</a>
+            </div>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Tuesday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name" placeholder="Exercise Name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Wednesday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Thursday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Friday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Saturday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+        <div class="day">
+          <h2 class="day-name">Sunday</h2>
+          <div class="exercise">
+            <input type="text" class="exercise-name"><a href="#" class="save-btn">Save</a>
+            <h3>Sets:</h3>
+            <ol class="set-list">
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+              <li><input type="text" class="rep-number"><label> reps</label><span> @</span>
+                <input type="text" class="weight-number">
+                <select>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                </select>
+              </li>
+            </ol>
+            <a href="#" class="delete-button">Delete</a>
+          </div>
+        </div>
+
+      </div>
 
     <footer>
     </footer>
