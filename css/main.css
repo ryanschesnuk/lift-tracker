@@ -12,9 +12,13 @@ header {
 
 .parameters {
   padding: 1em;
-  margin-bottom: 2.5%;
+  margin: 0 auto 2.5% auto;
+  width: 70%;
 }
 
+.save-all-btn {
+  float: right;
+}
 /*********************************************
     APP
 **********************************************/
@@ -29,6 +33,7 @@ header {
   border-radius: 5px;
   padding: 0.5em;
   position: relative;
+  margin: 0 0.5em;
 }
 
 .day-header {
@@ -60,6 +65,7 @@ header {
   font-size: 0.8em;
   background-color: #B0FE76;
   box-shadow: 1px 1px 2px 2px #595A4A;
+  margin-bottom: 0.75em;
 }
 
 .save-btn {
@@ -103,7 +109,7 @@ header {
 .set-list li {
   margin-top:10px;
   margin-bottom: 10px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .rep-number {
