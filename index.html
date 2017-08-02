@@ -5,6 +5,7 @@
     <meta name="description" content="Enter Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enter Title</title>
+
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700&family=Vollkorn:400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
@@ -14,6 +15,7 @@
       <h1>Lift Tracker</h1>
 
     </header>
+    <div ng-controller="exerciseCtrl" class="app-container">
     <div class="parameters">
       <label>Units:</label>
       <select>
@@ -43,36 +45,30 @@
             <option value="other">Other</option>
           </select>
         </div>
-          <div class="exercise">
-            <select class="exercise-type">
+          <div ng-repeat="exercise in exercises" class="exercise">
+            <select ng-model="exercise.type" ng-init="exercise.type = 'weights'" class="exercise-type">
               <option value="weights">Weights</option>
               <option value="cardio">Cardio</option>
             </select>
             <a href="" class="save-btn">Save</a>
             <div class="name-container">
             <label ng-click="editing = true;" ng-hide="editing" class="">{{ exercise.name }}</label>
-            <input ng-model="exercise.name" ng-blur="editing = false;" type="text" class="exercise-name" placeholder="Exercise Name">
+            <input ng-blur="editing = false;" ng-show="editing" ng-model="exercise.name" type="text" class="exercise-name">
           </div>
+          <div class="set-container" ng-controller="setCtrl">
           <div class="sets-title-container">
             <h3 class="sets-title">Sets:</h3>
             <a class="add-new-set" href="#">+ Add new set</a>
           </div>
             <ol class="set-list">
-              <li>
-                <label>{{ set.rep }}</label>
-                <input ng-model="set.rep" type="text" class="rep-number"><span> reps @</span>
-                <label>{{ set.weight }}</label>
-                <input ng-model="set.weight" type="text" class="weight-number"><span class="units"> lbs</span>
-              </li>
-              <li>
-                <input type="text" class="rep-number"><span> reps @</span>
-                <input type="text" class="weight-number"><span class="units"> lbs</span>
-              </li>
-              <li>
-                <input type="text" class="rep-number"><span> reps @</span>
-                <input type="text" class="weight-number"><span class="units"> lbs</span>
+              <li ng-repeat="set in sets">
+                <label ng-click="repEditing = true;" ng-hide="repEditing">{{ set.reps }}</label>
+                <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number"><span> reps @</span>
+                <label ng-click="weightEditing = true" ng-hide="weightEditing">{{ set.weight }}</label>
+                <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number"><span class="units"> lbs</span>
               </li>
             </ol>
+            </div>
             <div class="cardio-info">
               <label><h3>Time:</h3></label><input class="time-number" type="text"><span>minutes</span>
             </div>
@@ -269,11 +265,13 @@
         </div>
 
       </div>
-
+</div>
     <footer>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
     </script>
     <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/controllers/exercise.js" type="text/javascript"></script>
+    <script src="scripts/controllers/sets.js" type="text/javascript"></script>
   </body>
 </html>

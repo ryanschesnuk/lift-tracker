@@ -66,6 +66,14 @@ header {
   float: right;
 }
 
+.exercise label {
+  border: 1px solid #595A4A;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: #E2F89C;
+  background-color: #E6FAFC;
+}
+
 .exercise-type {
   margin-bottom: 10px;
 }
@@ -93,8 +101,8 @@ header {
   clear: both;
 }
 .set-list li {
-  margin-top:5px;
-  margin-bottom: 5px;
+  margin-top:10px;
+  margin-bottom: 10px;
   padding-left: 15px;
 }
 
