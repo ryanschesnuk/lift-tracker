@@ -34,6 +34,7 @@ header {
   padding: 0.5em;
   position: relative;
   margin: 0 0.5em;
+  vertical-align: top;
 }
 
 .day-header {
@@ -66,6 +67,7 @@ header {
   background-color: #B0FE76;
   box-shadow: 1px 1px 2px 2px #595A4A;
   margin-bottom: 0.75em;
+
 }
 
 .save-btn {
@@ -86,6 +88,10 @@ header {
 .exercise-name {
   width: 125px;
   display: block;
+}
+
+.hide-sets {
+  display: none;
 }
 
 .sets-title-container {
@@ -120,11 +126,15 @@ header {
   width: 40px;
 }
 
-.cardio-info{
-  display: none;
-  /*background-color: #D1603D;*/
+.cardio-container label {
+  width: 25px;
+
 }
-.cardio-info h3 {
+
+.cardio-background {
+  background-color: #D1603D;
+}
+.cardio-container h3 {
   display: inline-block;
 }
 .time-number {

@@ -18,9 +18,9 @@
     <div ng-controller="mainCtrl" class="app-container">
     <div class="parameters">
       <label>Units:</label>
-      <select>
-        <option value="metric">Metric (kg)</option>
-        <option value="imperial">Imperial (lbs)</option>
+      <select ng-model="units.selection" ng-init="units.selection = 'lbs'">
+        <option value="lbs">Imperial (lbs)</option>
+        <option value="kg">Metric (kg)</option>
       </select>
       <a class="save-all-btn" href="#">Save All</a>
     </div>
@@ -45,7 +45,7 @@
             <option value="other">Other</option>
           </select>
         </div>
-          <div ng-repeat="exercise in exercises" class="exercise">
+          <div ng-repeat="exercise in exercises" class="exercise" ng-class="{'cardio-background': exercise.type == 'cardio'}">
             <select ng-model="exercise.type" ng-init="exercise.type = 'weights'" class="exercise-type">
               <option value="weights">Weights</option>
               <option value="cardio">Cardio</option>
@@ -55,25 +55,27 @@
             <label ng-click="editing = true;" ng-hide="editing" class="">{{ exercise.name }}</label>
             <input ng-blur="editing = false;" ng-show="editing" ng-model="exercise.name" type="text" class="exercise-name">
           </div>
-          <div class="set-container" ng-controller="setCtrl">
+          <div class="sets-container" ng-controller="setCtrl" ng-hide="exercise.type == 'cardio';">
           <div class="sets-title-container">
             <h3 class="sets-title">Sets:</h3>
-            <a class="add-new-set" href="#">+ Add new set</a>
+            <a class="add-new-set" href="#">+ Add set</a>
           </div>
             <ol class="set-list">
               <li ng-repeat="set in sets">
                 <label ng-click="repEditing = true;" ng-hide="repEditing">{{ set.reps }}</label>
                 <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number"><span> reps @</span>
                 <label ng-click="weightEditing = true" ng-hide="weightEditing">{{ set.weight }}</label>
-                <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number"><span class="units"> lbs</span>
+                <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number"><span class="units"> {{ units.selection }}</span>
               </li>
             </ol>
             </div>
-            <div class="cardio-info">
-              <label><h3>Time:</h3></label><input class="time-number" type="text"><span>minutes</span>
+            <div class="cardio-container" ng-hide="exercise.type == 'weights'">
+              <h3>Time:</h3>
+              <label ng-click="cardioEditing = true" ng-hide="cardioEditing">{{ cardio.time }}</label>
+              <input ng-model="cardio.time" ng-init="cardio.time = 30" ng-blur="cardioEditing = false" ng-show="cardioEditing" class="time-number" type="text"><span> minutes</span>
             </div>
             <div class="buttons">
-            <a href="#" class="delete-button">Delete</a>
+            <a href="#" class="delete-exercise">Delete</a>
             </div>
           </div>
         </div>
