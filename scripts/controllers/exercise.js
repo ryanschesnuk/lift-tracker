@@ -12,11 +12,9 @@ angular.module("liftTrackerApp")
     $scope.exercises.splice($index, 1);
   };
 
+  // Pre-populate each day with one exercise upon page load
   $scope.exercises = [
     {"name": "Exercise Name"},
   ];
 
-  $scope.exercise = [
-    {"type": "Weights"}
-  ]
 });
