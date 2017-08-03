@@ -48,7 +48,7 @@
       <input ng-model="cardio.time" ng-init="cardio.time = 30" ng-blur="cardioEditing = false" ng-show="cardioEditing" class="time-number" type="text"><span> minutes</span>
     </div>
     <div class="buttons">
-    <a href="#" class="delete-exercise">Delete</a>
+    <a href="" ng-click="deleteExercise(exercise, $index)" class="delete-exercise">Delete</a>
     </div>
   </div>
 </div>

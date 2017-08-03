@@ -7,6 +7,11 @@ angular.module("liftTrackerApp")
     let newExercise = {"name": "Exercise Name"};
     $scope.exercises.push(newExercise);
   };
+
+  $scope.deleteExercise = function(exercise, $index) {
+    $scope.exercises.splice($index, 1);
+  };
+
   $scope.exercises = [
     {"name": "Exercise Name"},
   ];
