@@ -6,11 +6,11 @@
   <ol class="set-list">
     <li ng-repeat="set in sets">
 
-      <label ng-click="repEditing = true;" ng-hide="repEditing">{{ set.reps }}</label>
-      <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number">
+      <label ng-click="repEditing = true;" ng-hide="repEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-set{{$index}}-reps">{{ set.reps }}</label>
+      <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-set{{$index}}-reps" class="rep-number">
       <span> reps @</span>
-      <label ng-click="weightEditing = true" ng-hide="weightEditing">{{ set.weight }}</label>
-      <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number">
+      <label ng-click="weightEditing = true" ng-hide="weightEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-set{{$index}}-weight">{{ set.weight }}</label>
+      <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-set{{$index}}-weight" class="weight-number">
       <span class="units"> {{ units.selection }}</span>
       <a ng-show="removeSet" ng-click="deleteSet(set, $index)" ng-blur="removeSet = false;" class="x-button-link" href=""><img class="x-button" src="img/close-icon.png"></a>
     </li>
