@@ -1,14 +1,20 @@
 <div class="sets-container" ng-controller="setCtrl" ng-hide="exercise.type == 'cardio';">
-<div class="sets-title-container">
-  <h3 class="sets-title">Sets:</h3>
-  <a ng-click="addSet()" class="add-new-set" href="">+ Add set</a>
-</div>
+  <div class="sets-title-container">
+    <h3 class="sets-title">Sets:</h3>
+    <a ng-click="addSet()" class="add-new-set" href="">+ Add Set</a>
+  </div>
   <ol class="set-list">
     <li ng-repeat="set in sets">
+
       <label ng-click="repEditing = true;" ng-hide="repEditing">{{ set.reps }}</label>
-      <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number"><span> reps @</span>
+      <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number">
+      <span> reps @</span>
       <label ng-click="weightEditing = true" ng-hide="weightEditing">{{ set.weight }}</label>
-      <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number"><span class="units"> {{ units.selection }}</span>
+      <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number">
+      <span class="units"> {{ units.selection }}</span>
+      <a ng-show="removeSet" ng-click="deleteSet(set, $index)" ng-blur="removeSet = false;" class="x-button-link" href=""><img class="x-button" src="img/close-icon.png"></a>
     </li>
   </ol>
-  </div>
+  <a ng-click="removeSet = !removeSet" ng-hide="removeSet" class="remove-set" href="">- Remove Set</a>
+  <a class="remove-set" ng-click="removeSet = false;" ng-show="removeSet" href="">Done</a>
+</div>
