@@ -1,0 +1,149 @@
+/*********************************************
+    APP STYLES
+**********************************************/
+
+/***********************
+OUTER CONTROLS AND CONTAINERS
+***********************/
+.parameters {
+  padding: 1em;
+  margin: 0 auto 2.5% auto;
+  width: 70%;
+}
+
+.save-all-btn {
+  float: right;
+}
+
+
+.schedule {
+  text-align: center;
+}
+
+/***********************
+        DAY
+***********************/
+.day {
+  display: inline-block;
+  border: 3px solid #363635;
+  border-radius: 5px;
+  padding: 0.5em;
+  position: relative;
+  margin: 0 0.5em;
+  vertical-align: top;
+}
+
+.day-header {
+  padding-bottom: 1em;
+}
+
+.day-name {
+  text-align: center;
+}
+
+/***********************
+        EXERCISE
+***********************/
+.add-exercise {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 35px;
+}
+
+.add-exercise:hover {
+  border: 2px solid #B0FE76;
+  border-radius: 50%;
+}
+
+.exercise {
+  text-align: left;
+  padding: 1em;
+  border: 1px solid blue;
+  border-radius: 5px;
+  font-size: 0.8em;
+  background-color: #B0FE76;
+  box-shadow: 1px 1px 2px 2px #595A4A;
+  margin-bottom: 0.75em;
+}
+
+.save-btn {
+  float: right;
+}
+
+.exercise label {
+  border: 1px solid #595A4A;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background-color: #E2F89C;
+  background-color: #E6FAFC;
+}
+
+.exercise-type {
+  margin-bottom: 10px;
+}
+
+.exercise-name {
+  width: 125px;
+  display: block;
+}
+
+/*.hide-sets {
+  display: none;
+}*/
+
+/***********************
+        SETS
+***********************/
+.sets-title-container {
+  padding: 1em 0;
+}
+.sets-title {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.add-new-set {
+  float: right;
+}
+
+.set-list {
+  padding-left: 20px;
+  margin-top: 0;
+  clear: both;
+}
+.set-list li {
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.rep-number {
+  width: 30px
+}
+
+.weight-number {
+  width: 40px;
+}
+
+/***********************
+        CARDIO
+***********************/
+.cardio-container label {
+  width: 25px;
+}
+
+.cardio-background {
+  background-color: #D1603D;
+}
+
+.cardio-container h3 {
+  display: inline-block;
+}
+
+.time-number {
+  width: 35px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
