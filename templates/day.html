@@ -26,21 +26,21 @@
     <a href="" class="save-btn">Save</a>
     <div class="name-container">
       <label ng-click="editing = true;" ng-hide="editing" class="" for="day{{$parent.$index}}-exercise{{$index}}">{{ exercise.name }}</label>
-      <input ng-blur="editing = false;" ng-show="editing" ng-model="exercise.name" type="text" id="day{{$parent.$index}}-exercise{{$index}}" class="exercise-name">
+      <input ng-blur="editing = false;" ng-show="editing" ng-model="exercise.name" ng-keypress="editing = enterPress($event);" type="text" id="day{{$parent.$index}}-exercise{{$index}}" class="exercise-name">
     </div>
     <sets></sets>
     <div class="cardio-container" ng-hide="exercise.type == 'weights'">
       <ul class="cardio-list">
         <li>
           <h3>Time:</h3>
-          <label ng-click="cardioEditing = true" ng-hide="cardioEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-time">{{ cardio.time }}</label>
-          <input ng-model="cardio.time" ng-init="cardio.time = 30" ng-blur="cardioEditing = false" ng-show="cardioEditing" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-time" class="time-number" type="text">
+          <label ng-click="timeEditing = true" ng-hide="timeEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-time">{{ cardio.time }}</label>
+          <input ng-model="cardio.time" ng-init="cardio.time = 30" ng-blur="timeEditing = false" ng-show="timeEditing" ng-keypress="timeEditing=$parent.enterPress($event)" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-time" class="time-number" type="text">
           <span> minutes</span>
         </li>
         <li>
           <h3>Distance:</h3>
-          <label ng-click="cardioEditing = true" ng-hide="cardioEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-distance">{{ cardio.distance }}</label>
-          <input ng-model="cardio.distance" ng-init="cardio.distance = 10" ng-blur="cardioEditing = false" ng-show="cardioEditing" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-distance" class="time-number" type="text">
+          <label ng-click="distanceEditing = true" ng-hide="distanceEditing" for="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-distance">{{ cardio.distance }}</label>
+          <input ng-model="cardio.distance" ng-init="cardio.distance = 10" ng-blur="distanceEditing = false" ng-show="distanceEditing" ng-keypress="distanceEditing=$parent.enterPress($event)" id="day{{$parent.$parent.$index}}-exercise{{$parent.$index}}-distance" class="time-number" type="text">
           <select>
             <option>mi</option>
             <option>km</option>

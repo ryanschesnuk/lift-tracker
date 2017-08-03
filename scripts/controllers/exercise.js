@@ -3,6 +3,15 @@
 angular.module("liftTrackerApp")
 .controller('exerciseCtrl', function($scope) {
 
+  $scope.enterPress = function(keyEvent) {
+    if (keyEvent.which === 13 || keyEvent.keyCode === 13){
+
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   $scope.addExercise = function (){
     let newExercise = {"name": "Exercise Name"};
     $scope.exercises.push(newExercise);
