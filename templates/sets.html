@@ -1,7 +1,7 @@
 <div class="sets-container" ng-controller="setCtrl" ng-hide="exercise.type == 'cardio';">
 <div class="sets-title-container">
   <h3 class="sets-title">Sets:</h3>
-  <a class="add-new-set" href="#">+ Add set</a>
+  <a ng-click="addSet()" class="add-new-set" href="">+ Add set</a>
 </div>
   <ol class="set-list">
     <li ng-repeat="set in sets">
