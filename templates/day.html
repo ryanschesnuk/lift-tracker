@@ -28,20 +28,7 @@
     <label ng-click="editing = true;" ng-hide="editing" class="">{{ exercise.name }}</label>
     <input ng-blur="editing = false;" ng-show="editing" ng-model="exercise.name" type="text" class="exercise-name">
   </div>
-  <div class="sets-container" ng-controller="setCtrl" ng-hide="exercise.type == 'cardio';">
-  <div class="sets-title-container">
-    <h3 class="sets-title">Sets:</h3>
-    <a class="add-new-set" href="#">+ Add set</a>
-  </div>
-    <ol class="set-list">
-      <li ng-repeat="set in sets">
-        <label ng-click="repEditing = true;" ng-hide="repEditing">{{ set.reps }}</label>
-        <input ng-model="set.reps" ng-blur="repEditing = false;" ng-show="repEditing" type="text" class="rep-number"><span> reps @</span>
-        <label ng-click="weightEditing = true" ng-hide="weightEditing">{{ set.weight }}</label>
-        <input ng-model="set.weight" ng-blur="weightEditing = false" ng-show="weightEditing" type="text" class="weight-number"><span class="units"> {{ units.selection }}</span>
-      </li>
-    </ol>
-    </div>
+  <sets></sets>
     <div class="cardio-container" ng-hide="exercise.type == 'weights'">
       <h3>Time:</h3>
       <label ng-click="cardioEditing = true" ng-hide="cardioEditing">{{ cardio.time }}</label>
