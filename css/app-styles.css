@@ -31,6 +31,9 @@ OUTER CONTROLS AND CONTAINERS
   position: relative;
   margin: 0 0.5em;
   vertical-align: top;
+
+  width: 222px;
+  min-height: 375px;
 }
 
 .day-header {
@@ -57,7 +60,7 @@ OUTER CONTROLS AND CONTAINERS
 }
 
 .exercise {
-  width: 180px;
+  width: 200px;
 
   text-align: left;
   padding: 0.5em;
@@ -118,6 +121,7 @@ OUTER CONTROLS AND CONTAINERS
 ***********************/
 .sets-container {
   width: 100%;
+  padding-bottom: 0.5em;
 }
 .sets-title-container {
   padding: 1em 0;
@@ -164,16 +168,25 @@ OUTER CONTROLS AND CONTAINERS
 /***********************
         CARDIO
 ***********************/
+
+.cardio-container {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
 .cardio-container label {
   width: 25px;
 }
 
+.cardio-list {
+  padding-left: 20px;
+}
 .cardio-background {
   background-color: #D1603D;
 }
 
 .cardio-container h3 {
   display: inline-block;
+  margin-bottom: 0;
 }
 
 .time-number {
@@ -186,7 +199,7 @@ OUTER CONTROLS AND CONTAINERS
         CLEARFIX
 ***********************/
 .clearfix::after {
-  display: table;
   content: "";
+  display: table;
   clear: both;
 }
