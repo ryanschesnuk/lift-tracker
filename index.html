@@ -14,15 +14,22 @@
 
   </head>
   <body ng-app="liftTrackerApp">
+    <div class="main-container">
     <header>
-      <h1>Lift Tracker</h1>
+      <div class="header-container clearfix">
+        <h1 id="site-name">Lift Tracker</h1>
+        <ul class="nav-menu">
+          <li><a class="sign-in-btn" href="">Sign In</a></li>
+        </ul>
+      </div>
 
     </header>
 
     <lift-tracker></lift-tracker>
-
+    </div>
     <footer>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
     </script>
     <script src="scripts/app.js" type="text/javascript"></script>
