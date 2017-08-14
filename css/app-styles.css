@@ -18,6 +18,8 @@ OUTER CONTROLS AND CONTAINERS
   background-color: #4F759B;
   background-color: #4C86A8;
   border-radius: 2px;
+  border: 2px solid #403D58;
+  box-shadow: 1px 1px 1px 1px #1A090D;
 
 }
 
@@ -68,7 +70,6 @@ OUTER CONTROLS AND CONTAINERS
 
 .exercise {
   width: 200px;
-
   text-align: left;
   padding: 0.5em;
   border: 1px solid blue;
@@ -77,6 +78,7 @@ OUTER CONTROLS AND CONTAINERS
   background-color: #B0FE76;
   box-shadow: 1px 1px 2px 2px #595A4A;
   margin-bottom: 0.75em;
+
 }
 
 .save-btn {
@@ -191,7 +193,7 @@ OUTER CONTROLS AND CONTAINERS
   background-color: #D1603D;
 }
 
-.cardio-container h3 {
+.cardio-container p {
   display: inline-block;
   margin-bottom: 0;
 }
