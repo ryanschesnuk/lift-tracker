@@ -1,8 +1,8 @@
-<div class="day" ng-controller="exerciseCtrl" ng-repeat="day in days">
+<div class="day" ng-controller="exerciseCtrl" ng-repeat="day in days" ng-class="{'today': isToday}">
   <div class="day-header">
     <a ng-click="addExercise()" href=""><img src="img/plus-circle.png" class="add-exercise"></a>
-    <h2 class="day-name">{{ day.name }}</h2>
-    <p class="day-date">July 31, 2017</p>
+    <h2 class="day-name">{{ day.dayName }}</h2>
+    <p class="day-date">{{ day.monthName }} {{ day.date }}, {{ day.year }}</p>
     <select>
     <option value="chest">Chest</option>
     <option value="back">Back</option>
