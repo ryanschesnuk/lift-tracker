@@ -3,13 +3,7 @@
 angular.module("liftTrackerApp")
 .controller('mainCtrl', function($scope) {
 
-  $scope.days = [];
-
-
   const currentDate = new Date();
-
-
-
 
   // Print day name
   function printDateName(day, month, date, year) {
@@ -34,7 +28,8 @@ angular.module("liftTrackerApp")
         'September',
         'October',
         'November',
-        'December'];
+        'December'
+      ];
 
 
     return {
@@ -60,8 +55,9 @@ angular.module("liftTrackerApp")
 
     let today = new Date();
 
-    // First Part of Week
+    let weekArray = [];
 
+    // Generate First Part of Week
     for (var i=dayPosition; i>=0; i--){
 
       if (dayNumber < 1) {
@@ -70,13 +66,12 @@ angular.module("liftTrackerApp")
         if (monthNumber < 0) {
           monthNumber = 11;
           year--;
-          }
+        }
 
         dayNumber = daysInMonths[monthNumber];
-
       }
 
-      $scope.days.unshift(printDateName(i, monthNumber, dayNumber, year));
+      weekArray.unshift(printDateName(i, monthNumber, dayNumber, year));
       // if (monthNumber === today.getMonth() && dayNumber === today.getDate() && year === today.getFullYear()){
       //   $scope.isToday = true;
       // } else {
@@ -85,29 +80,30 @@ angular.module("liftTrackerApp")
       dayNumber--;
     }
 
-    // Second Part of Week
+    // Generate Second Part of Week
     if ( dayPosition < 6) {
       monthNumber = date.getMonth();
       dayNumber = date.getDate() + 1;
       year = date.getFullYear();
 
-    for (var j=dayPosition+1; j<=6; j++) {
-      if (dayNumber > daysInMonths[monthNumber]) {
-        monthNumber++;
-        dayNumber = 1;
+      for (var j=dayPosition+1; j<=6; j++) {
+        if (dayNumber > daysInMonths[monthNumber]) {
+          monthNumber++;
+          dayNumber = 1;
 
-        if (monthNumber > 11) {
-          monthNumber = 0;
-          year++;
+          if (monthNumber > 11) {
+            monthNumber = 0;
+            year++;
+          }
         }
+        weekArray.push(printDateName(j, monthNumber, dayNumber, year));
+        dayNumber++;
       }
-      $scope.days.push(printDateName(j, monthNumber, dayNumber, year));
-      dayNumber++;
     }
-  }
+    return weekArray;
 }
 
-createCurrentWeek(currentDate);
+$scope.days = createCurrentWeek(currentDate);
 
 
 });

@@ -13,6 +13,12 @@ OUTER CONTROLS AND CONTAINERS
 
 .save-all-btn {
   float: right;
+  color: white;
+  padding: 15px 20px;
+  background-color: #4F759B;
+  background-color: #4C86A8;
+  border-radius: 2px;
+
 }
 
 
